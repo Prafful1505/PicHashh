@@ -1,0 +1,164 @@
+:root {
+  --body-bg: beige; /* Default body background */
+  --footer-bg: beige; /* Default footer background */
+  --text-color: #333; /* Default text color */
+}
+
+html, body {
+  height: 100%; /* Set height to 100% */
+  margin: 0; /* Remove default margin */
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
+}
+
+main {
+  flex: 1; /* Allow main content to grow */
+}
+
+footer {
+  background-color: var(--footer-bg); /* Use variable for footer background */
+  color: var(--text-color); /* Use variable for footer text color */
+  text-align: center;
+  padding: 20px;
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+body.dark-theme {
+  --body-bg: #333; /* Dark background */
+  --footer-bg: #333; /* Match footer to dark background */
+  --text-color: #fff; /* Light text color */
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.theme-toggle-container {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  text-align: center; /* Center the heading and toggle */
+}
+
+.theme-toggle-container h2 {
+  margin: 0;
+  font-size: 14px; /* Adjust font size as needed */
+  color: var(--text-color); /* Match text color with theme */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+input[type="file"] {
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 50px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+li {
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #0069d9;
+}
+
+#uploaded-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px; /* Adjust as needed */
+}
+
+#spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust height as needed */
+}
+
+#spinner img {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+}
+
+/* Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
